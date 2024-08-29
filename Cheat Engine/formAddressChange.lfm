@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 object Form2: TForm2
   Left = 608
   Top = 302
@@ -14,3 +15,21 @@ object Form2: TForm2
   PixelsPerInch = 96
   TextHeight = 13
 end
+=======
+object Form2: TForm2
+  Left = 608
+  Top = 302
+  Width = 294
+  Height = 160
+  Caption = 'Address'
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'MS Sans Serif'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+end
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade

@@ -7,6 +7,10 @@
 	<buildSpec>
 		<buildCommand>
 			<name>org.eclipse.cdt.managedbuilder.core.genmakebuilder</name>
+<<<<<<< HEAD
+=======
+			<triggers>clean,full,incremental,</triggers>
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade
 			<arguments>
 			</arguments>
 		</buildCommand>

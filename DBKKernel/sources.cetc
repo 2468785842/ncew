@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 TARGETNAME=cetc
 TARGETPATH=obj
 TARGETTYPE=DRIVER
 SOURCES=DBKDrvr.c DBKFunc.c rootkit.c processlist.c cetc.c memscan.c tdiwrapper.c kfiles.c threads.c
+=======
+TARGETNAME=cetc
+TARGETPATH=obj
+TARGETTYPE=DRIVER
+SOURCES=DBKDrvr.c DBKFunc.c rootkit.c processlist.c cetc.c memscan.c tdiwrapper.c kfiles.c threads.c
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade

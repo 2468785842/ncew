@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 object frmIDT: TfrmIDT
   Left = 928
   Height = 321
@@ -23,3 +24,30 @@ object frmIDT: TfrmIDT
     Options = [tvoAutoItemHeight, tvoHideSelection, tvoKeepCollapsedNodes, tvoReadOnly, tvoShowButtons, tvoShowLines, tvoShowRoot, tvoToolTips]
   end
 end
+=======
+object frmIDT: TfrmIDT
+  Left = 928
+  Height = 321
+  Top = 337
+  Width = 299
+  Caption = 'IDT'
+  ClientHeight = 321
+  ClientWidth = 299
+  OnClose = FormClose
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '1.6.0.4'
+  object tvIDT: TTreeView
+    Left = 0
+    Height = 321
+    Top = 0
+    Width = 299
+    Align = alClient
+    DefaultItemHeight = 18
+    Indent = 19
+    ReadOnly = True
+    TabOrder = 0
+    Options = [tvoAutoItemHeight, tvoHideSelection, tvoKeepCollapsedNodes, tvoReadOnly, tvoShowButtons, tvoShowLines, tvoShowRoot, tvoToolTips]
+  end
+end
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade

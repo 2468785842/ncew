@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 BUILDIN_ACTIVATE         RCDATA ".\\sounds\\tick1.wav"
 BUILDIN_DEACTIVATE       RCDATA ".\\sounds\\tick2.wav"
 
 
+=======
+BUILDIN_ACTIVATE         RCDATA ".\\sounds\\tick1.wav"
+BUILDIN_DEACTIVATE       RCDATA ".\\sounds\\tick2.wav"
+
+
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade

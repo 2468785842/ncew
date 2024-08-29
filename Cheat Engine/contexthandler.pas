@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade
 unit contexthandler;
 
 //helper for dealing with different context types
@@ -9,7 +13,11 @@ unit contexthandler;
 interface
 
 uses
+<<<<<<< HEAD
   {$ifdef darwin}macport,{$endif}{$ifdef windows}windows, {$endif}Classes, SysUtils,StringHashList, newkernelhandler,math;
+=======
+  {$ifdef darwin}macport,{$endif}{$ifdef windows}windows, {$endif}Classes, SysUtils,StringHashList, NewKernelHandler,math;
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade
 
 type
 
@@ -20,6 +28,10 @@ type
     displayType: integer;
     ContextOffset: integer;
     BitStart: integer; //when entrytype<>0
+<<<<<<< HEAD
+=======
+    internalidentifier: integer;
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade
   public
     function getPointer(context: pointer): pointer;
     function getDword(context: pointer): dword;
@@ -40,11 +52,20 @@ type
 
   TContextInfo=class
   private
+<<<<<<< HEAD
     nameToEntryLookup: TStringHashList;
 
     fcontextsize: integer;
     general: PContextElementRegisterList;
     altgeneral: PContextElementRegisterList; //alt names and subfields (like AX, AH, SIL, R15=PC, etc... Won't be shown, but text lookups will work with this)
+=======
+
+  protected
+    nameToEntryLookup: TStringHashList;
+    fcontextsize: integer;
+    general: PContextElementRegisterList;
+    altgeneral: PContextElementRegisterList; //alt names and subfields like AX, AH, SIL, R15=PC, etc... Won't be shown, but text lookups will work with this
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade
     specialized: PContextElementRegisterList; //CS, DS, FS, fsbase, gsbase, etc...
     flags: PContextElementRegisterList;
     mainfpu: PContextElementRegisterList;
@@ -59,6 +80,10 @@ type
 
     fInstructionPointerRegister: PContextElement_register;
     fStackPointerRegister: PContextElement_register;
+<<<<<<< HEAD
+=======
+    fFramePointerRegister: PContextElement_register;
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade
     fContextFlagsField: PContextElement_register;
 
     procedure setGeneralPurposeRegisters(list: PContextElementRegisterList);
@@ -87,6 +112,10 @@ type
     property GeneralPurposeFlagMaxCharCount: integer read fGeneralPurposeFlagMaxCharCount;
     property InstructionPointerRegister: PContextElement_register read fInstructionPointerRegister;
     property StackPointerRegister: PContextElement_register read fStackPointerRegister;
+<<<<<<< HEAD
+=======
+    property FramePointerRegister: PContextElement_register read fFramePointerRegister;
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade
     property ContextSize: integer read fcontextsize;
 
     constructor create;
@@ -110,12 +139,26 @@ var
   ContextInfo_ARM_32: TContextInfo;
   ContextInfo_ARM_64: TContextInfo;
 
+<<<<<<< HEAD
 
 function getBestContextHandler:TContextInfo;
 
 implementation
 
 uses ProcessHandlerUnit, parsers, symbolhandler;
+=======
+  SpecializedContextInfo: TContextInfo;
+
+
+function getBestContextHandler:TContextInfo;
+procedure setSpecializedContexHandler(handler: TContextInfo);
+
+implementation
+
+{$ifndef STANDALONEDEBUG}
+uses ProcessHandlerUnit, parsers, symbolhandler;
+{$endif}
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade
 
 
 {$ifdef cpu32}
@@ -557,9 +600,17 @@ end;
 procedure TContextElement_register.setValue(context: pointer; value:string);
 var v: QWORD;
 begin
+<<<<<<< HEAD
   if entrytype=0 then
     v:=symhandler.getAddressFromName(value)
   else
+=======
+  {$ifndef STANDALONEDEBUG}
+  if entrytype=0 then
+    v:=symhandler.getAddressFromName(value)
+  else
+  {$endif}
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade
     v:=StrToInt64(value);
 
   setValue(context,v);
@@ -720,6 +771,13 @@ end;
 function getBestContextHandler:TContextInfo;
 begin
   result:=nil;
+<<<<<<< HEAD
+=======
+  if SpecializedContextInfo<>nil then
+    exit(SpecializedContextInfo);
+
+{$ifndef STANDALONEDEBUG}
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade
   if processhandler.SystemArchitecture=archX86 then
   begin
     {$ifdef cpu64}
@@ -736,6 +794,15 @@ begin
     else
       result:=ContextInfo_ARM_32;
   end;
+<<<<<<< HEAD
+=======
+{$endif}
+end;
+
+procedure setSpecializedContexHandler(handler: TContextInfo); //e.g gdbserverdebuggerinterface calls this to register it's own context menu
+begin
+  SpecializedContextInfo:=handler;
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade
 end;
 
 procedure InitContextInfos;
@@ -784,6 +851,10 @@ begin
 
   ContextInfo_X86_32.fInstructionPointerRegister:=ContextInfo_X86_32.getRegister('EIP');
   ContextInfo_X86_32.fStackPointerRegister:=ContextInfo_X86_32.getRegister('ESP');
+<<<<<<< HEAD
+=======
+  ContextInfo_X86_32.fFramePointerRegister:=ContextInfo_X86_32.getRegister('EBP');
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade
   ContextInfo_X86_32.fContextFlagsField:=@X86_32Context_controlreg;
 
   {$endif}
@@ -824,7 +895,11 @@ begin
 
   for i:=0 to 7 do
   begin
+<<<<<<< HEAD
     e.name:='FP('+inttostr(i)+')';
+=======
+    e.name:='FP'+inttostr(i);
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade
     e.ContextOffset:=integer(@PCONTEXT(nil)^.FltSave.FloatRegisters[i]);
     X86_32Context_fpu2[i]:=e;
     ContextInfo_X86_32.nameToEntryLookup.Add(e.name,@X86_32Context_fpu2[i]);
@@ -833,6 +908,10 @@ begin
   ContextInfo_X86_32.secondaryfpuname:='FPU';
   ContextInfo_X86_32.fInstructionPointerRegister:=ContextInfo_X86_32.getRegister('EIP');
   ContextInfo_X86_32.fStackPointerRegister:=ContextInfo_X86_32.getRegister('ESP');
+<<<<<<< HEAD
+=======
+  ContextInfo_X86_32.fFramePointerRegister:=ContextInfo_X86_32.getRegister('EBP');
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade
   ContextInfo_X86_32.fContextFlagsField:=@X86_32Context_controlreg;
 
   //----normal----
@@ -866,6 +945,10 @@ begin
   ContextInfo_X86_64.secondaryfpuname:='FPU';
   ContextInfo_X86_64.fInstructionPointerRegister:=ContextInfo_X86_64.getRegister('RIP');
   ContextInfo_X86_64.fStackPointerRegister:=ContextInfo_X86_64.getRegister('RSP');
+<<<<<<< HEAD
+=======
+  ContextInfo_X86_64.fFramePointerRegister:=ContextInfo_X86_64.getRegister('RBP');
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade
   ContextInfo_X86_64.fContextFlagsField:=@X86_64Context_controlreg;
   {$endif}
 
@@ -930,6 +1013,10 @@ begin
   ContextInfo_ARM_64.setFloatingPointRegisters(@ARM_64Context_fpu);
   ContextInfo_ARM_64.fInstructionPointerRegister:=ContextInfo_ARM_64.getRegister('PC');
   ContextInfo_ARM_64.fStackPointerRegister:=ContextInfo_ARM_64.getRegister('SP');
+<<<<<<< HEAD
+=======
+  ContextInfo_ARM_64.fFramePointerRegister:=ContextInfo_ARM_64.getRegister('FP');
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade
   {$ifdef darwin}
   ContextInfo_ARM_64.fContextFlagsField:=@ARM_64Context_controlreg;
   {$endif}

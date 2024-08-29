@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 object frmDBVMLoadManual: TfrmDBVMLoadManual
   Left = 682
   Height = 92
@@ -13,3 +14,20 @@ object frmDBVMLoadManual: TfrmDBVMLoadManual
   Position = poScreenCenter
   LCLVersion = '1.6.0.4'
 end
+=======
+object frmDBVMLoadManual: TfrmDBVMLoadManual
+  Left = 682
+  Height = 92
+  Top = 148
+  Width = 268
+  HorzScrollBar.Page = 1
+  VertScrollBar.Page = 1
+  AutoSize = True
+  BorderIcons = [biSystemMenu]
+  Caption = 'Manual load DBVM'
+  OnClose = FormClose
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '1.6.0.4'
+end
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade

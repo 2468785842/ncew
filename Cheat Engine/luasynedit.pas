@@ -41,11 +41,57 @@ begin
 
     luaclass_newClass(L, s);
     result:=1;
+<<<<<<< HEAD
 
 
   end;
 end;
 
+=======
+  end;
+end;
+
+function syn_getCaretX(L: PLua_State): integer; cdecl;
+var
+  s: TCustomSynEdit;
+begin
+  s:=luaclass_getClassObject(L);
+  lua_pushinteger(L, s.CaretX);
+  result:=1;
+end;
+
+function syn_setCaretX(L: PLua_State): integer; cdecl;
+var
+  s: TCustomSynEdit;
+begin
+  s:=luaclass_getClassObject(L);
+  if lua_gettop(L)>0 then
+    s.CaretX:=lua_tointeger(L,1);
+
+  result:=0;
+end;
+
+function syn_getCaretY(L: PLua_State): integer; cdecl;
+var
+  s: TCustomSynEdit;
+begin
+  s:=luaclass_getClassObject(L);
+  lua_pushinteger(L, s.CaretY);
+  result:=1;
+end;
+
+function syn_setCaretY(L: PLua_State): integer; cdecl;
+var
+  s: TCustomSynEdit;
+begin
+  s:=luaclass_getClassObject(L);
+  if lua_gettop(L)>0 then
+    s.CaretY:=lua_tointeger(L,1);
+
+  result:=0;
+end;
+
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade
 
 function syn_getSelStart(L: PLua_State): integer; cdecl;
 var
@@ -206,6 +252,12 @@ begin
   luaclass_addPropertyToTable(L, metatable, userdata, 'CharWidth', syn_getCharWidth, nil);
   luaclass_addPropertyToTable(L, metatable, userdata, 'LineHeight', syn_getLineHeight, nil);
 
+<<<<<<< HEAD
+=======
+  luaclass_addPropertyToTable(L, metatable, userdata, 'CaretX', syn_getCaretX, syn_setCaretX);
+  luaclass_addPropertyToTable(L, metatable, userdata, 'CaretY', syn_getCaretY, syn_setCaretY);
+
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade
   luaclass_addClassFunctionToTable(L, metatable, userdata, 'CopyToClipboard', syn_CopyToClipboard);
   luaclass_addClassFunctionToTable(L, metatable, userdata, 'CutToClipboard', syn_CutToClipboard);
   luaclass_addClassFunctionToTable(L, metatable, userdata, 'PasteFromClipboard', syn_PasteFromClipboard);

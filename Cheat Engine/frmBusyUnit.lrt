@@ -1,2 +1,7 @@
+<<<<<<< HEAD
 TFRMBUSY.CAPTION=Cheat Engine Scan Busy
 TFRMBUSY.LABEL1.CAPTION=The previous scan is still being processed. Please wait
+=======
+TFRMBUSY.CAPTION=Cheat Engine Scan Busy
+TFRMBUSY.LABEL1.CAPTION=The previous scan is still being processed. Please wait
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade

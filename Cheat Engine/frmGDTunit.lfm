@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 object frmGDTinfo: TfrmGDTinfo
   Left = 997
   Height = 325
@@ -23,3 +24,30 @@ object frmGDTinfo: TfrmGDTinfo
     Options = [tvoAutoItemHeight, tvoHideSelection, tvoKeepCollapsedNodes, tvoReadOnly, tvoShowButtons, tvoShowLines, tvoShowRoot, tvoToolTips]
   end
 end
+=======
+object frmGDTinfo: TfrmGDTinfo
+  Left = 997
+  Height = 325
+  Top = 439
+  Width = 299
+  Caption = 'GDT'
+  ClientHeight = 325
+  ClientWidth = 299
+  OnClose = FormClose
+  OnCreate = FormCreate
+  Position = poScreenCenter
+  LCLVersion = '1.6.0.4'
+  object TreeView1: TTreeView
+    Left = 0
+    Height = 325
+    Top = 0
+    Width = 299
+    Align = alClient
+    DefaultItemHeight = 18
+    Indent = 19
+    ReadOnly = True
+    TabOrder = 0
+    Options = [tvoAutoItemHeight, tvoHideSelection, tvoKeepCollapsedNodes, tvoReadOnly, tvoShowButtons, tvoShowLines, tvoShowRoot, tvoToolTips]
+  end
+end
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade

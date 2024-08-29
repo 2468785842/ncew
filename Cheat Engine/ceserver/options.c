@@ -15,7 +15,11 @@
 //OPTIONS
 int optioncount;
 
+<<<<<<< HEAD
 CEServerOption optMRO={.optname="optMSO", .parent=NULL, .description="Memory search option",  .acceptablevalues="0=/proc/pid/mem reads;1=ptrace read;2=process_vm_readv", .type=2, .data=&MEMORY_SEARCH_OPTION};
+=======
+CEServerOption optMRO={.optname="optMSO", .parent=NULL, .description="Memory search option",  .acceptablevalues="0=/proc/pid/mem reads;1=ptrace read;2=process_vm_readv;3=process_vm_readv syscall", .type=2, .data=&MEMORY_SEARCH_OPTION};
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade
 CEServerOption optATAM={.optname="optATAM", .parent=NULL, .description="Attach to access memory",  .acceptablevalues=NULL, .type=1, .data=&ATTACH_TO_ACCESS_MEMORY};
 CEServerOption optATWM={.optname="optATWM", .parent=NULL, .description="Attach to write memory",  .acceptablevalues=NULL, .type=1, .data=&ATTACH_TO_WRITE_MEMORY};
 CEServerOption optAWSO={.optname="optAWSO", .parent=NULL, .description="Allocate memory without extension injection",  .acceptablevalues=NULL, .type=1, .data=&ALLOC_WITHOUT_EXTENSION};

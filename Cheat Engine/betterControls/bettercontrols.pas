@@ -13,7 +13,11 @@ uses
   newScrollBox, {$ifndef bc_skipsynedit}newSynEdit,{$endif}
   newPageControl, newtabcontrol, newStatusBar,
   newCheckListBox, newCheckGroup, newColorBox, newDirectoryEdit, NewHintwindow,
+<<<<<<< HEAD
   newToggleBox, newvirtualstringtree,
+=======
+  newToggleBox, {$ifndef bc_skipvirtualstringtree}newvirtualstringtree,{$endif}
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade
   Graphics, Themes, UxTheme, bettercontrolColorSet;
 {$else}
 uses {macport,} graphics,math, bettercontrolColorSet;
@@ -53,7 +57,13 @@ type
   THintWindowClass =class of TNewHintwindow;
 
   TToggleBox=class(TNewToggleBox);
+<<<<<<< HEAD
   TLazVirtualStringTree=class(TNewLazVirtualStringTree);
+=======
+  {$ifndef bc_skipvirtualstringtree}
+  TLazVirtualStringTree=class(TNewLazVirtualStringTree);
+  {$endif}
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade
 
 {$endif}
 var
@@ -91,6 +101,10 @@ var
 
 
   procedure registerDarkModeHintHandler;
+<<<<<<< HEAD
+=======
+  procedure registerDarkModeFormAddHandler;
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade
   {$endif}
 
   {$ifdef darwin}
@@ -106,7 +120,11 @@ implementation
 uses forms, controls, Registry, Win32Proc{$ifndef skip_mainunit2}, mainunit2{$endif};
 
 {$ifdef skip_mainunit2}
+<<<<<<< HEAD
 const strCheatEngine='NCEW';
+=======
+const strCheatEngine='Cheat Engine';
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade
 {$endif}
 
 
@@ -205,17 +223,28 @@ end;
 
 
 type
+<<<<<<< HEAD
   TBCHintHandler=class
   private
     procedure ShowHintEvent(var HintStr: string; var CanShow: Boolean; var HintInfo: THintInfo);
   end;
 
 procedure TBCHintHandler.ShowHintEvent(var HintStr: string; var CanShow: Boolean; var HintInfo: THintInfo);
+=======
+  TBCFormEventHandler=class
+  private
+    procedure ShowHintEvent(var HintStr: string; var CanShow: Boolean; var HintInfo: THintInfo);
+    procedure FormAddedEvent(Sender: TObject; Form: TCustomForm);
+  end;
+
+procedure TBCFormEventHandler.ShowHintEvent(var HintStr: string; var CanShow: Boolean; var HintInfo: THintInfo);
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade
 begin
   if ShouldAppsUseDarkMode then
     HintInfo.HintColor:=ColorSet.TextBackground;
 end;
 
+<<<<<<< HEAD
 procedure registerDarkModeHintHandler;
 var hh: TBCHintHandler;
 begin
@@ -223,6 +252,34 @@ begin
   application.AddOnShowHintHandler(hh.ShowHintEvent);
 end;
 
+=======
+procedure TBCFormEventHandler.FormAddedEvent(Sender: TObject; Form: TCustomForm);
+begin
+  {if ShouldAppsUseDarkMode then
+  begin
+    form.color:=$242424;
+    if form.font.color=clDefault then
+      form.font.color:=colorset.FontColor;
+  end;  }
+
+  //todo
+end;
+
+procedure registerDarkModeHintHandler;
+var hh: TBCFormEventHandler;
+begin
+  hh:=TBCFormEventHandler.Create;
+  application.AddOnShowHintHandler(hh.ShowHintEvent);
+end;
+
+procedure registerDarkModeFormAddHandler;
+var hh: TBCFormEventHandler;
+begin
+  hh:=TBCFormEventHandler.Create;
+  screen.AddHandlerFormAdded(hh.FormAddedEvent);
+end;
+
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade
 var
   c: TColorRef;
   theme: THandle;

@@ -949,7 +949,15 @@ end;
 
 
 initialization
+<<<<<<< HEAD
    luaclass_register(TVirtualStringTree,  virtualstringtree_addMetaData);
+=======
+   {$ifdef laztrunk}
+   luaclass_register(TCustomVirtualStringTree,  virtualstringtree_addMetaData);
+   {$else}
+   luaclass_register(TVirtualStringTree,  virtualstringtree_addMetaData);
+   {$endif}
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade
    luaclass_register(TVirtualTreeColumns, VirtualTreeColumns_addMetaData);
    luaclass_register(TVirtualTreeColumn,  VirtualTreeColumn_addMetaData);
    luaclass_register(TVTHeader,  VTHeader_addMetaData);

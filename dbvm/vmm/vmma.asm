@@ -1356,10 +1356,17 @@ push rdx
 pushfq
 pop rax
 mov rdx,rax
+<<<<<<< HEAD
 
 xor rax,1000000000000000000000b
 push rax
 popfq
+=======
+
+xor rax,1000000000000000000000b
+push rax
+popfq
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade
 pushfq
 pop rax
 cmp rax,rdx

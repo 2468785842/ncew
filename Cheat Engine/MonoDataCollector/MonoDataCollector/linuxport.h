@@ -5,6 +5,11 @@
  *      Author: eric
  */
 
+<<<<<<< HEAD
+=======
+#ifndef __APPLE__
+
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade
 #ifndef MONODATACOLLECTOR_LINUXPORT_H_
 #define MONODATACOLLECTOR_LINUXPORT_H_
 
@@ -84,3 +89,8 @@ BOOL WriteFilePipeWrapper(HANDLE hFile, LPVOID lpBuffer, DWORD nNumberOfBytesToW
 
 
 #endif /* MONODATACOLLECTOR_LINUXPORT_H_ */
+<<<<<<< HEAD
+=======
+
+#endif not __APPLE__
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade

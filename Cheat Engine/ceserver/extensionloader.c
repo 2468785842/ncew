@@ -771,7 +771,11 @@ int loadExtension(PProcessData p, char *path)
 
     if (p->dlopencaller)
     {
+<<<<<<< HEAD
       if (ptrace(PTRACE_POKEDATA, pid, newregs.rsp+12, p->dlopencaller)!=0)
+=======
+      if (ptrace(PTRACE_POKEDATA, pid, newregs.esp+12, p->dlopencaller)!=0)
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade
       {
         debug_log("Fuck4\n");
         safe_ptrace(PTRACE_DETACH, pid,0,0);

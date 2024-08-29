@@ -217,11 +217,23 @@ LIBTCCAPI int tcc_run(TCCState *s1, int argc, char **argv)
 /* To avoid that x86 processors would reload cached instructions
    each time when data is written in the near, we need to make
    sure that code and data do not share the same 64 byte unit */
+<<<<<<< HEAD
  #define RUN_SECTION_ALIGNMENT 63
+=======
+  #if defined(__APPLE__)
+    #define RUN_SECTION_ALIGNMENT 4093 //apple rosetta doesn't do data inside the code segment well
+  #else
+   #define RUN_SECTION_ALIGNMENT 63
+  #endif
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade
 #else
  #define RUN_SECTION_ALIGNMENT 0
 #endif
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade
 #if defined (TCC_TARGET_ARM64) && defined(__APPLE__)
   #define RUN_SECTION_ALIGNMENT (16*1024)-1
 #endif

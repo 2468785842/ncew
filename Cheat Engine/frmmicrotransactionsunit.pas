@@ -70,7 +70,11 @@ var ss: TStringstream;
 begin
   {$IFDEF windows}
   if internet=nil then
+<<<<<<< HEAD
     internet:=TWinInternet.Create({$ifdef altname}'NCEW'{$else}strCheatEngine{$endif}+' microtransaction system');
+=======
+    internet:=TWinInternet.Create({$ifdef altname}'Cheat Engine'{$else}strCheatEngine{$endif}+' microtransaction system');
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade
 
   ss:=tstringstream.create({$if FPC_FULLVERSION<030200}''{$endif});
   try

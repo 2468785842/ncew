@@ -1,5 +1,12 @@
+<<<<<<< HEAD
 LIBRARY		Example-C
 EXPORTS   
     CEPlugin_GetVersion	@1
     CEPlugin_InitializePlugin @2
+=======
+LIBRARY		Example-C
+EXPORTS   
+    CEPlugin_GetVersion	@1
+    CEPlugin_InitializePlugin @2
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade
     CEPlugin_DisablePlugin @3

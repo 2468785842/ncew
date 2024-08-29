@@ -1,5 +1,13 @@
+<<<<<<< HEAD
 TFRMNETWORKDATACOMPRESSION.CAPTION=Compression level
 TFRMNETWORKDATACOMPRESSION.LABEL1.CAPTION=Change the compression level you wish to use when transferring/receiving memory.
 Pick a good balance between cpu power of the device and network bandwidth
 TFRMNETWORKDATACOMPRESSION.LBLNONE.CAPTION=No Compression
 TFRMNETWORKDATACOMPRESSION.LBLMAXCOMPRESSION.CAPTION=Max Compression
+=======
+TFRMNETWORKDATACOMPRESSION.CAPTION=Compression level
+TFRMNETWORKDATACOMPRESSION.LABEL1.CAPTION=Change the compression level you wish to use when transferring/receiving memory.
+Pick a good balance between cpu power of the device and network bandwidth
+TFRMNETWORKDATACOMPRESSION.LBLNONE.CAPTION=No Compression
+TFRMNETWORKDATACOMPRESSION.LBLMAXCOMPRESSION.CAPTION=Max Compression
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade

@@ -12,7 +12,11 @@ ret
 ;-----------------;
 ;inportb(int port); returns a byte from the given port
 ;-----------------;
+<<<<<<< HEAD
 global inportb
+=======
+global inportb
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade
 inportb:
 push ebp
 mov ebp,esp
@@ -108,7 +112,11 @@ ret ;4
 
 ;-----------------------------------------;
 ;void outportb(short int port, char value);
+<<<<<<< HEAD
 ;-----------------------------------------;
+=======
+;-----------------------------------------;
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade
 global outportb
 outportb:
 push ebp

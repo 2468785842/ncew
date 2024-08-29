@@ -1,6 +1,15 @@
+<<<<<<< HEAD
 TFORM1.CAPTION=Cheat Engine Tutorial v3.4
 TFORM1.LABEL1.CAPTION=Password
 TFORM1.BUTTON1.CAPTION=Next
 TFORM1.EDTPASSWORD.HINT=Use this to go imeadiatly to the step you want to try
 TFORM1.EDTPASSWORD.TEXT=090453
 TFORM1.BTNOK.CAPTION=OK
+=======
+TFORM1.CAPTION=Cheat Engine Tutorial v3.4
+TFORM1.LABEL1.CAPTION=Password
+TFORM1.BUTTON1.CAPTION=Next
+TFORM1.EDTPASSWORD.HINT=Use this to go imeadiatly to the step you want to try
+TFORM1.EDTPASSWORD.TEXT=090453
+TFORM1.BTNOK.CAPTION=OK
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade

@@ -92,6 +92,13 @@ var oldc: tcolor;
 begin
   result:=inherited DoDrawItem(ACanvas, ARect, AState);
 
+<<<<<<< HEAD
+=======
+  if acanvas=nil then exit;
+  if parent=nil then exit;
+  if parent.menu=nil then exit;
+
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade
   if ShouldAppsUseDarkMode() and (result=false) then
   begin
     result:=Parent.Menu is TMainMenu;

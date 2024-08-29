@@ -1,2 +1,6 @@
+<<<<<<< HEAD
 run ce.bat in the win2k development environment to compile the driver
+=======
+run ce.bat in the win2k development environment to compile the driver
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade
 This build has last been tested with DDK build 7600.16385.0

@@ -1,4 +1,11 @@
+<<<<<<< HEAD
 TFRMBREAKTHREAD.CAPTION=Break Thread
 TFRMBREAKTHREAD.LABEL1.CAPTION=This process has more than 1 thread. Select the thread you wish to break
 TFRMBREAKTHREAD.BUTTON1.CAPTION=OK
 TFRMBREAKTHREAD.BUTTON2.CAPTION=Cancel
+=======
+TFRMBREAKTHREAD.CAPTION=Break Thread
+TFRMBREAKTHREAD.LABEL1.CAPTION=This process has more than 1 thread. Select the thread you wish to break
+TFRMBREAKTHREAD.BUTTON1.CAPTION=OK
+TFRMBREAKTHREAD.BUTTON2.CAPTION=Cancel
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 This source code is distributed by the LuaBinaries project:
 
     http://luabinaries.sourceforge.net/
@@ -10,3 +11,17 @@ but following the same directives of the original Makefiles.
 
 Best Regards,
 LuaBinaries Team
+=======
+This source code is distributed by the LuaBinaries project:
+
+    http://luabinaries.sourceforge.net/
+    
+No changes are made to the Lua.org source code, 
+except for the "luaconf.h" file, where the LUA_CPATH_DEFAULT is complemented.
+
+All binaries are generated using our own Makefiles, 
+but following the same directives of the original Makefiles.
+
+Best Regards,
+LuaBinaries Team
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade

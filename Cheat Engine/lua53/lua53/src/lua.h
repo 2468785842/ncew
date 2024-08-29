@@ -126,9 +126,15 @@ typedef void * (*lua_Alloc) (void *ud, void *ptr, size_t osize, size_t nsize);
 /*
 ** generic extra include file
 */
+<<<<<<< HEAD
 #if defined(LUA_USER_H)
 #include LUA_USER_H
 #endif
+=======
+//#if defined(LUA_USER_H)
+#include "lua_user.h"
+//#endif
+>>>>>>> a3e1a24b8cf6b1bafc5aecce676cca5131281ade
 
 
 /*
