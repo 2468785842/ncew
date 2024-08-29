@@ -1,0 +1,25 @@
+﻿  Building 'DBKKernel' with toolset 'WindowsKernelModeDriver10.0' and the 'Desktop' target platform.
+  Stamping Release\DBK32.inf
+  Stamping [Version] section with DriverVer=07/19/2023,22.54.11.919
+C:\Users\Li_Dong\Desktop\cheat-engine-master\DBKKernel\DBK32.inf(5-5): warning 1324: [Version] section should specify PnpLockdown=1.
+  Assembling i386\noexceptionsa.asm...
+  Assembling segmentinfo.asm...
+  DBKDrvr.c
+  DBKFunc.c
+  debugger.c
+  deepkernel.c
+  interruptHook.c
+  IOPLDispatcher.c
+C:\Users\Li_Dong\Desktop\cheat-engine-master\DBKKernel\IOPLDispatcher.c(2183,68): error C2220: 以下警告被视为错误
+C:\Users\Li_Dong\Desktop\cheat-engine-master\DBKKernel\IOPLDispatcher.c(2183,68): warning C4305: “类型强制转换”: 从“UINT64”到“void *”截断
+C:\Users\Li_Dong\Desktop\cheat-engine-master\DBKKernel\IOPLDispatcher.c(2183,105): warning C4305: “类型强制转换”: 从“UINT64”到“void *”截断
+  memscan.c
+  noexceptions.c
+  processlist.c
+  threads.c
+  ultimap.c
+  ultimap2.c
+  apic.c
+  vmxhelper.c
+  vmxoffload.c
+  正在生成代码...
